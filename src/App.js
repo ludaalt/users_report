@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
 
-function App() {
+import CardList from "./components/CardList";
+import { getData } from "./services/getData";
+
+const App = () => {
+  const [appData, setAppData] = useState([]);
+  const [isLoadingData, setIsLoadingData] = useState(false);
+
+  useEffect(() => {
+    setIsLoadingData(true);
+
+    getData().then((items) => {
+      if (isLoadingData) {
+        setAppData(items);
+      }
+    });
+    setIsLoadingData(false);
+  }, [isLoadingData]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <input />
+      {isLoadingData && <div>A moment please...</div>}
+      <CardList data={appData} />
+    </>
   );
-}
+};
 
 export default App;
