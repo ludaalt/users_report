@@ -11,8 +11,8 @@ const StyledCardList = styled.ul`
   justify-content: space-between;
 `;
 
-const CardList = (data) => {
-  const cardList = data.data.map((item) => (
+const CardList = ({ data }) => {
+  const cardList = data.map((item) => (
     <Card
       key={item.name}
       title={item.name}
