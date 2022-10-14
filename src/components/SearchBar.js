@@ -1,6 +1,6 @@
 import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
-import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
 import styled from "styled-components";
 
 const SearchForm = styled.form`
@@ -15,18 +15,27 @@ const TextFieldWrapper = styled(TextField)`
   }
 `;
 
-const SearchBar = () => {
-  const onSubmit = (data, e) => {
-    e.preventDefault();
-    console.log(data);
+const SearchBar = ({ filterData }) => {
+  const onSubmit = (event) => {
+    event.preventDefault();
+  };
+
+  const handleChange = (event) => {
+    filterData(event.target.value);
   };
 
   return (
-    <SearchForm onSubmit={(e) => onSubmit}>
-      <TextFieldWrapper fullWidth variant="outlined" />
-      <Button type="submit" size="small">
+    <SearchForm onSubmit={onSubmit}>
+      <TextFieldWrapper
+        onChange={handleChange}
+        fullWidth
+        variant="outlined"
+        autoComplete="off"
+      />
+
+      <IconButton size="large" type="submit" aria-label="search">
         <SearchIcon color="secondary" />
-      </Button>
+      </IconButton>
     </SearchForm>
   );
 };
