@@ -6,6 +6,7 @@ const palette = createPalette({
     main: "#9c27b0",
     light: "#d3d3d3",
     contrastText: "#808080",
+    white: "#fff",
   },
 });
 
