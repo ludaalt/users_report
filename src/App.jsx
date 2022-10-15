@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 
-import Context from "./context";
-import CardList from "./components/CardList";
-import SearchBar from "./components/SearchBar";
-import Modal from "./components/Modal";
-import { getData } from "./services/getData";
+import Context from './context';
+import CardList from './components/CardList';
+import SearchBar from './components/SearchBar';
+import Modal from './components/Modal';
+import { getData } from './services/getData';
 
 const AppContainer = styled.div`
   max-width: 1200px;
@@ -50,17 +50,13 @@ const App = () => {
 
   return (
     <Context.Provider value={{ showModal }}>
-      <>
-        <AppContainer>
-          <SearchBar filterData={filterData} />
+      <AppContainer>
+        <SearchBar filterData={filterData} />
 
-          {isLoadingData && <div>A moment please...</div>}
-          {!isLoadingData && <CardList data={filteredData} />}
-          {isModalShow && (
-            <Modal setIsModalShow={setIsModalShow} currentUser={currentUser} />
-          )}
-        </AppContainer>
-      </>
+        {isLoadingData && <div>A moment please...</div>}
+        {!isLoadingData && <CardList data={filteredData} />}
+        {isModalShow && <Modal setIsModalShow={setIsModalShow} currentUser={currentUser} />}
+      </AppContainer>
     </Context.Provider>
   );
 };

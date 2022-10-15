@@ -1,4 +1,4 @@
-import users from "../users.json";
+import users from '../users.json';
 
 export const getData = async () => {
   if (process.env.REACT_APP_BASE_URL) {

@@ -1,9 +1,10 @@
-import TextField from "@mui/material/TextField";
-import SearchIcon from "@mui/icons-material/Search";
-import IconButton from "@mui/material/IconButton";
-import styled from "styled-components";
+import React from 'react';
+import TextField from '@mui/material/TextField';
+import SearchIcon from '@mui/icons-material/Search';
+import IconButton from '@mui/material/IconButton';
+import styled from 'styled-components';
 
-import defaultTheme from "../const/defaultTheme";
+import defaultTheme from '../const/defaultTheme';
 
 const SearchForm = styled.form`
   display: flex;
@@ -28,12 +29,7 @@ const SearchBar = ({ filterData }) => {
 
   return (
     <SearchForm onSubmit={onSubmit}>
-      <TextFieldWrapper
-        onChange={handleChange}
-        fullWidth
-        variant="outlined"
-        autoComplete="off"
-      />
+      <TextFieldWrapper onChange={handleChange} fullWidth variant="outlined" autoComplete="off" />
 
       <IconButton size="large" type="submit" aria-label="search">
         <SearchIcon color="secondary" />

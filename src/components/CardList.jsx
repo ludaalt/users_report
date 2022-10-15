@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import Card from "./Card";
+import Card from './Card';
 
 const StyledCardList = styled.ul`
   list-style: none;
@@ -12,14 +13,7 @@ const StyledCardList = styled.ul`
 `;
 
 const CardList = ({ data }) => {
-  const cardList = data.map((item) => (
-    <Card
-      key={item.name}
-      title={item.name}
-      phone={item.phone}
-      email={item.email}
-    />
-  ));
+  const cardList = data.map((item) => <Card key={item.name} title={item.name} phone={item.phone} email={item.email} />);
   return <StyledCardList>{cardList}</StyledCardList>;
 };
 

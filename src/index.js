@@ -1,8 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { createGlobalStyle } from "styled-components";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { createGlobalStyle } from 'styled-components';
 
-import App from "./App";
+import App from './App';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -17,10 +17,10 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <GlobalStyle />
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
 );

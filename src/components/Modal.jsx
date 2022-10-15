@@ -1,8 +1,9 @@
-import styled from "styled-components";
-import Typography from "@mui/material/Typography";
-import Link from "@mui/material/Link";
+import React from 'react';
+import styled from 'styled-components';
+import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
 
-import defaultTheme from "../const/defaultTheme";
+import defaultTheme from '../const/defaultTheme';
 
 const ModalWrap = styled.div`
   display: flex;
@@ -95,10 +96,7 @@ const Modal = ({ setIsModalShow, currentUser }) => {
               </th>
               <td>
                 <Typography variant="body2">
-                  <Link
-                    href={`mailto:${currentUser.email}?subject=Let's contact`}
-                    color="inherit"
-                  >
+                  <Link href={`mailto:${currentUser.email}?subject=Let's contact`} color="inherit">
                     {currentUser.email}
                   </Link>
                 </Typography>
@@ -120,9 +118,7 @@ const Modal = ({ setIsModalShow, currentUser }) => {
               </th>
 
               <td>
-                <Typography variant="body2">
-                  {currentUser.position_name}
-                </Typography>
+                <Typography variant="body2">{currentUser.position_name}</Typography>
               </td>
             </tr>
 
@@ -132,16 +128,12 @@ const Modal = ({ setIsModalShow, currentUser }) => {
               </th>
 
               <td>
-                <Typography variant="body2">
-                  {currentUser.department}
-                </Typography>
+                <Typography variant="body2">{currentUser.department}</Typography>
               </td>
             </tr>
           </tbody>
         </StyledTable>
-        <StyledButton onClick={() => setIsModalShow(false)}>
-          &times;
-        </StyledButton>
+        <StyledButton onClick={() => setIsModalShow(false)}>&times;</StyledButton>
       </ModalBody>
     </ModalWrap>
   );

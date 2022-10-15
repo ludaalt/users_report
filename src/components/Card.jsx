@@ -1,12 +1,12 @@
-import { useContext } from "react";
-import styled from "styled-components";
-import Typography from "@mui/material/Typography";
-import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import Link from "@mui/material/Link";
+import React, { useContext } from 'react';
+import styled from 'styled-components';
+import Typography from '@mui/material/Typography';
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import Link from '@mui/material/Link';
 
-import Context from "../context";
-import defaultTheme from "../const/defaultTheme";
+import Context from '../context';
+import defaultTheme from '../const/defaultTheme';
 
 const StyledCard = styled.li`
   cursor: pointer;
@@ -24,8 +24,7 @@ const StyledCard = styled.li`
     transition: 0.6s;
 
     border: 1px solid ${defaultTheme.palette.primary.main};
-    box-shadow: rgba(100, 100, 111, 0.7) 0px 7px 29px 0px,
-      rgba(255, 255, 255, 0.4) 0px 0px 999px 999px;
+    box-shadow: rgba(100, 100, 111, 0.7) 0px 7px 29px 0px, rgba(255, 255, 255, 0.4) 0px 0px 999px 999px;
     z-index: 500;
   }
 
