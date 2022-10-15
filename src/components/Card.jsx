@@ -10,8 +10,6 @@ import defaultTheme from '../const/defaultTheme';
 
 const StyledCard = styled.li`
   cursor: pointer;
-
-  width: 370px;
   min-height: 300px;
   padding: 35px 30px;
   margin-top: 20px;
@@ -30,6 +28,12 @@ const StyledCard = styled.li`
 
   &:not(:hover) {
     transition: 1.5s;
+  }
+
+  @media (max-width: 1000px) {
+    min-width: 100%;
+    min-height: 150px;
+    padding: 20px 5px;
   }
 `;
 
@@ -59,8 +63,8 @@ const Card = ({ title, phone, email }) => {
       </ContactContainer>
       <ContactContainer>
         <MailOutlineIcon color="secondary" />
-        <Typography variant="body1" ml={0.8}>
-          <Link href={`mailto:${email}?subject=Let's contact`} color="inherit">
+        <Typography variant="body1" ml={0.8} sx={{ overflow: 'hidden' }}>
+          <Link href={`mailto:${email}?subject=Let's contact`} color="inherit" style={{ whiteSpace: 'wrap' }}>
             {email}
           </Link>
         </Typography>

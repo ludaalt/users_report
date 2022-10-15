@@ -30,6 +30,15 @@ const ModalBody = styled.div`
   padding: 2rem;
 
   position: relative;
+
+  @media (max-width: 650px) {
+    width: 90%;
+    padding: 2rem 1rem;
+  }
+
+  @media (max-width: 650px) {
+    padding: 2rem 0.5rem;
+  }
 `;
 
 const StyledTable = styled.table`
@@ -38,6 +47,14 @@ const StyledTable = styled.table`
   th {
     text-align: left;
     padding: 5px 50px 5px 0;
+
+    @media (max-width: 450px) {
+      padding-right: 20px;
+    }
+
+    @media (max-width: 360px) {
+      padding-right: 5px;
+    }
   }
 
   td {
@@ -48,6 +65,10 @@ const StyledTable = styled.table`
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+
+      @media (max-width: 650px) {
+        max-width: 40%;
+      }
     }
   }
 `;

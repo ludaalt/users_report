@@ -10,6 +10,10 @@ import { getData } from './services/getData';
 const AppContainer = styled.div`
   max-width: 1200px;
   margin: 20px auto;
+
+  @media (max-width: 1300px) {
+    max-width: 80%;
+  }
 `;
 
 const App = () => {
