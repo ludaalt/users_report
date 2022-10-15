@@ -3,10 +3,12 @@ import SearchIcon from "@mui/icons-material/Search";
 import IconButton from "@mui/material/IconButton";
 import styled from "styled-components";
 
+import defaultTheme from "../const/defaultTheme";
+
 const SearchForm = styled.form`
   display: flex;
   border-radius: 50px;
-  border: 1px solid lightgray;
+  border: 1px solid ${defaultTheme.palette.primary.light};
 `;
 
 const TextFieldWrapper = styled(TextField)`
